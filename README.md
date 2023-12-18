@@ -18,7 +18,7 @@ Sinta-se à vontade para explorar as pastas e revisar as soluções. Se tiver al
 ## Contato
 
 - [Perfil do CodeForces](https://codeforces.com/profile/leviathans)
-- [Outros perfis e redes sociais]
+- [Linkedin](http://www.linkedin.com/in/ojo%C3%A3osoares)
 
 ## Contribuições
 
