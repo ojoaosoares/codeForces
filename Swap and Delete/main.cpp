@@ -1,7 +1,5 @@
 #include <iostream>
 #include <string>
-#include <vector>
-#include <algorithm>
 
 // const int calculateCost(const std::string &s) { First version that exceded the time limit
 
@@ -40,28 +38,33 @@
 
 const int calculateCost(const std::string &s) {
 
-    const int size = s.length(); 
-    std::vector<int> amount_0s_in_t;
-    int total_of_1s_in_s = 0;
+    const int size = s.length();
+
+    int* amount_0s_in_t = new int[size]; // The array that contains the amount of 0-bits in the string t till a determined size
+
+    int total_of_1s_in_s = 0; // Amount of 0-bits in the original string
 
     for (int i = 0; i < size; i++)
     {
-        if(s[i] == '1') total_of_1s_in_s++;
+        if(s[i] == '1') total_of_1s_in_s++; // Increses the counter of 1-bits of the original string
     
-        amount_0s_in_t.push_back(total_of_1s_in_s);
+        amount_0s_in_t[i] = total_of_1s_in_s; // The total of 1-bits in determined part of the original string will be the total of 0-bits
+        // in the string t in the same size
     }
 
-    int total_of_0s_in_s = size - total_of_1s_in_s;
+    const int total_of_0s_in_s = size - total_of_1s_in_s; // The total of 0-bits in the original string will be the total size minus the amout of 1-bits
 
-    std::reverse(amount_0s_in_t.begin(), amount_0s_in_t.end());
+    int size_final_string; // It's the variable tha represents the size of the string t, what is the counterpart of the orignal string
 
-    int op;
-    for (op = 0; op < size; op++)
-        if(total_of_0s_in_s >= amount_0s_in_t[op] && ((size - op) - amount_0s_in_t[op]) <= total_of_1s_in_s) break;
+    for (size_final_string = size; size_final_string > 0; size_final_string--)
+        if(total_of_0s_in_s >= amount_0s_in_t[size_final_string - 1] && total_of_1s_in_s >= size_final_string - amount_0s_in_t[size_final_string - 1])
+            break; // If the amout of 0-bits and 1-bits of the first string t of size size_final_string are smaller than the orinal string, then will be the 
+            //exacly string we're looking for
+    
+    delete[] amount_0s_in_t;
 
-    return op;
-
-
+    return size - size_final_string; // We return the diference of the size of the two strings, because it's exacly the cost of the operation of removim a caracter
+    // Remembering that changing positions of two caracters cost nothing
 
 }
 
