@@ -8,7 +8,7 @@ My CodeForces profile: [leviathans](https://codeforces.com/profile/leviathans)
 
 ## Repository Structure
 
-- Each folder is associated with a specific problem and contains the corresponding solution.
+- Each file is associated with a specific problem and contains the corresponding solution.
 - Files are named descriptively for easy identification.
 
 ## How to Navigate
