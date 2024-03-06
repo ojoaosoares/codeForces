@@ -18,7 +18,7 @@ Feel free to explore the folders and review the solutions. If you have any quest
 ## Contact
 
 - [CodeForces Profile](https://codeforces.com/profile/leviathans)
-- [Linkedin](http://www.linkedin.com/in/ojo%C3%A3osoares)
+- [Linkedin](http://www.linkedin.com/in/ojoaovsoares)
 
 ## Contributions
 
